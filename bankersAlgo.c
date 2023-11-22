@@ -1,26 +1,27 @@
 #include <stdio.h>
+
 int main()
 {
     int processes, resources;
 
     printf("Enter the number of processes: ");
-    scanf("%d\n", &processes);
+    scanf("%d", &processes);
 
     printf("Enter the number of resources: ");
-    scanf("%d\n", &resources);
+    scanf("%d", &resources);
 
     int allocation[processes][resources];
-    printf("Enter the values in allocation matrix: \n");
+    printf("\nEnter the values in allocation matrix: \n");
     for(int i=0; i<processes; i++)
     {
         for(int j=0; j<resources; j++)
         {
-            printf("Enter the resource for P", i, ": ");
+            printf("Enter the resource for P%d: ", i);
             scanf("%d", &allocation[i][j]);
         }
         printf("\n");
-        printf("\n");
     }
+    printf("\n");
 
     int max[processes][resources];
     printf("Enter the values in max matrix: \n");
@@ -28,12 +29,12 @@ int main()
     {
         for(int j=0; j<resources; j++)
         {
-            printf("Enter the max resource for P", i, ": ");
+            printf("Enter the max resource for P%d: ", i);
             scanf("%d", &max[i][j]);
         }
         printf("\n");
-        printf("\n");
     }
+    printf("\n");
  
     int available[resources];
     printf("Enter the values in available matrix: \n");
@@ -98,12 +99,12 @@ int main()
     
     if(flag == 1)
     {
-        printf("Following is the SAFE Sequence\n");
+        printf("\nFollowing is the safe sequence: \n");
         for(int i=0; i<processes-1; i++)
         {
-            printf("P%d ->", ans[i]);
+            printf("P%d->", ans[i]);
         }
-        printf(" P%d", ans[processes-1]);
+        printf("P%d", ans[processes-1]);
     }
     
     return 0;
